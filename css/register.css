@@ -22,7 +22,12 @@ body{
     flex-direction: column;
 }
 
+.container-item .a{
+    margin-top: 2%;
+}
+
 p{
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
