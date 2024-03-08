@@ -82,3 +82,25 @@ a:hover{color: #0048a7}
     text-decoration: none;
     cursor: pointer;
 }
+
+
+/* ELECTOR PAGE */
+.container{
+    width: 90%;
+    height: auto;
+    margin: 2%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container-item{
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+
+.title{
+    color: #015FC7;
+}

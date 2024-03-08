@@ -37,6 +37,7 @@ form{
 
 input{
     width: 400px;
+    height: 30px;
     margin-bottom: 20px;
 }
 
@@ -50,7 +51,8 @@ input[type="submit"] {
     background-color: #007bff; /* Couleur de fond */
     color: #fff; /* Couleur du texte */
     cursor: pointer; /* Changement de curseur au survol */
-    width: 20%; /* Réduire la largeur à 50% */
+    width: 20%;
+    height: 35px;
     margin-left: 130px;
     margin-top: 10px;
 }
