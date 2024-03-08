@@ -11,19 +11,28 @@
 
     <header>
         <a href="index.html"><img src="./../assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
-        <a href="elector.html" id="personalInfo">Personnal Info</a>
-        <a href="elections.html"  id="elections">Elections</a>
+        <nav>
+            <a href="elector.html" id="personalInfo">Personnal Info</a>
+            <a href="elections.html"  id="elections">Elections</a>
+        </nav>
     </header>
 
     <div class="elections">
 
         <div class="election">
-            <button onclick="openPopUp()">Election A</button>
+            <button id="openPopupBtn" onclick="openPopUp()">Election A</button>
+        </div>
+
+        <div id="votePopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2>Vote</h2>
+            </div>
         </div>
 
     </div>
 
     
-    
+    <script src="./../js/popup.js"></script>
 </body>
 </html>
