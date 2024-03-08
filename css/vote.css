@@ -28,13 +28,15 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-
 a{
     color: white;
     text-decoration: none;
 }
 a:hover{color: #0048a7}
-
+nav a.active {
+    text-decoration: underline;
+    text-decoration-color: #005AC7;
+}
 
 .elections{
     margin-left: 10%;
