@@ -101,8 +101,13 @@ nav a.active {
     width: 200px;
     margin-bottom: 30px;
 }
-
-
+.address{
+    display: flex;
+    flex-direction: row;
+}
+.address p, .address span{
+    margin-right: 10px;
+}
 .title{
     color: #015FC7;
 }
