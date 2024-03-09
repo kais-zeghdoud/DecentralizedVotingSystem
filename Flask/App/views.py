@@ -22,8 +22,13 @@ def register():
     return render_template('register.html')
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        address = request.form['address']
+        pk = request.form['pk']
+        # appel fonction de verification wallet ganache
+        print(address, pk)
     return render_template('login.html')
 
 
