@@ -1,11 +1,26 @@
 import sys, subprocess, logging
-from flask import Flask, render_template, request, redirect, flash, url_for
+from flask import Flask, render_template, request, redirect, flash, url_for, jsonify
+from web3 import Web3
 
 app = Flask(__name__)
 
 @app.route('/VotinCorpo')
 def index():
     return render_template('index.html')
+
+# Connexion à Ganache
+ganache_url = "http://127.0.0.1:7545"  # Mettez à jour avec l'URL de votre Ganache
+web3 = Web3(Web3.HTTPProvider(ganache_url))
+
+
+@app.route('/accounts')
+def get_accounts():
+    try:
+        accounts = web3.eth.accounts
+        return jsonify({'accounts': accounts}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 
 
 @app.route('/register', methods=['GET', 'POST'])
