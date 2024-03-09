@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='assets/eth.png')}}">
     <link href='https://fonts.googleapis.com/css?family=DM Serif Display' rel='stylesheet'>
-    <link rel="stylesheet" href="./../css/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
     <title>VotinCorpo</title>
 </head>
 <body>
@@ -12,23 +13,20 @@
         <a class="active" href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#context">Context</a>
-        <a href="#login">Login</a>
+        <a href="/login">Login</a>
         
       </div>
     <div class="container">
         <div class="container-item">
-            <img src="./../assets/index.png" alt="regiter image" width="392" height="666">
+            <img src="./../static/assets/index.png" alt="Let's vote" width="392" height="666">
         </div>
 
         <div class="container-item">
             <p style="font-size: 30px">Be a part of decision</p>
-            <form action="submit.php" method="POST">
+            <form>
                 <p style="font-size: 60px">Vote Today</p>
-        
-                <input type="submit" value="REGISTER">
-                <input type="submit" value="READ MORE">
-                
             </form>
+            <a href="/register"><input type="submit" value="REGISTER"></a>
         </div>
 
     </div>

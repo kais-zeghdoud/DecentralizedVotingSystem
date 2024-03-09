@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='assets/eth.png')}}">
+    <link rel="stylesheet" href="./../static/css/vote.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>VotinCorpo - Personnal info</title>
+</head>
+<body>
+
+    <header>
+        <a href="/VotinCorpo"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
+        <nav>
+            <a href="/MyElectorSpace" id="personalInfo">Personnal Info</a>
+            <a href="/elections"  id="elections">Elections</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="container-item">
+            <p class="title">Full Name:</p>
+            <p>{{user['name']}}</p>
+        </div>
+
+        <div class="container-item">
+            <p class="title">Company:</p>
+            <p>{{user['company']}}</p>
+        </div>
+
+        <div class="container-item">
+            <p class="title">Position:</p>
+            <p>{{user['position']}}</p>
+        </div>
+
+        <div class="container-item">
+            <p class="title">Email:</p>
+            <p>{{user['email']}}</p>
+        </div>
+
+        <div class="container-item">
+            <p class="title">Public address:</p>
+            <div class="address">
+                <p>{{user['address']}}</p>
+                <span class="copy-btn" onclick="copyToClipboard('{{user['address']}}')"><i class="fas fa-copy"></i></span>
+            </div>
+        </div>
+
+        <div class="container-item">
+            <p class="title">Private key:</p>
+            <div class="address">
+                <p id="private-key">{{user['pk']}}</p>
+                <span onclick="toggleVisibility()"><i class="fas fa-eye-slash"></i></span>
+                <span class="copy-btn" onclick="copyToClipboard('{{user['pk']}}')"><i class="fas fa-copy"></i></span>
+            </div>
+        </div>
+
+        <div class="container-item">
+            <p class="title">Number of votes:</p>
+            <p>{{user['votes']}}</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/vote.js')}}"></script>
+</body>
+</html>

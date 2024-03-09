@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='assets/eth.png')}}">
+    <link href='https://fonts.googleapis.com/css?family=DM Serif Display' rel='stylesheet'>
+    <link rel="stylesheet" href="./../static/css/login.css">
+    <title>VotinCorpo - Login</title>
+</head>
+
+<body>
+
+    <header>
+        <a href="/VotinCorpo"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
+    </header>
+
+    <div class="container">
+        <div class="container-item">
+            <img src="./../static/assets/login.png" alt="regiter image" width="392" height="666">
+        </div>
+
+        <div class="container-item">
+            <p style="font-size: 30px">Login</p>
+            <form action="{{url_for('login')}}" method="POST">        
+                <label for="address">Address :</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="pk">Private key :</label>
+                <input type="text" id="pk" name="pk" required>
+
+                <p>Not a user? <a href="/register">Register now</a></p>
+        
+                <input type="submit" value="LOGIN">
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
