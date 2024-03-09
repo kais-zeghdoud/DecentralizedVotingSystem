@@ -7,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=DM Serif Display' rel='stylesheet'>
     <link rel="stylesheet" href="./../static/css/login.css">
     <title>VotinCorpo - Login</title>
+    <script type="text/javascript">window.setTimeout("document.getElementById('msg').style.display='none';", 5000);</script>
 </head>
 
 <body>
@@ -32,6 +33,14 @@
                 <p>Not a user? <a href="/register">Register now</a></p>
         
                 <input type="submit" value="LOGIN">
+
+                {% with messages = get_flashed_messages() %} 
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div id="msg">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
             </form>
         </div>
     </div>
