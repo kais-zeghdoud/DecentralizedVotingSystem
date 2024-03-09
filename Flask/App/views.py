@@ -1,7 +1,17 @@
 import sys, subprocess, logging
 from flask import Flask, render_template, request, redirect, flash, url_for
+from .ganache import *
 
+# data en dur à supprimer plus tard
+data = {'name': "kais",
+        'company': "efrei",
+        'position': "dev",
+        'email': 'kais.zeghdoud@efrei.net',
+        'address': '0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5',
+        'pk': '0x999999cf1046e68e36E1aA2E0E07105eDDD1f08E',
+        'votes': 0}
 app = Flask(__name__)
+
 
 @app.route('/VotinCorpo')
 def index():
@@ -27,20 +37,22 @@ def login():
     if request.method == 'POST':
         address = request.form['address']
         pk = request.form['pk']
-        # appel fonction de verification wallet ganache
-        print(address, pk)
+        accounts = get_accounts()
+        if accounts:
+            if address in accounts:
+                if "0x"+accounts[address] == pk:
+                    return render_template("elector.html", user = data)
+                else:
+                    print("Invalid private key !")
+            else:
+                print("Invalid Address")
+        else:
+            print("blockchain unreachable, make sure that ganache is launched")
     return render_template('login.html')
 
 
 @app.route('/MyElectorSpace', methods=['GET'])
 def elector():
-    data = {'name': "kais",
-            'company': "efrei",
-            'position': "dev",
-            'email': 'kais.zeghdoud@efrei.net',
-            'address': '0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5',
-            'pk': '0x999999cf1046e68e36E1aA2E0E07105eDDD1f08E',
-            'votes': 0}
     return render_template('elector.html', user = data)
 
 
