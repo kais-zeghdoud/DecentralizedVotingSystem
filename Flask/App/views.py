@@ -32,9 +32,16 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/MyElectorSpace')
+@app.route('/MyElectorSpace', methods=['GET'])
 def elector():
-    return render_template('elector.html')
+    data = {'name': "kais",
+            'company': "efrei",
+            'position': "dev",
+            'email': 'kais.zeghdoud@efrei.net',
+            'address': '0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5',
+            'pk': '0x999999cf1046e68e36E1aA2E0E07105eDDD1f08E',
+            'votes': 0}
+    return render_template('elector.html', user = data)
 
 
 @app.route('/elections')
