@@ -8,8 +8,8 @@ function closePopup() {
 // Récupération du chemin de la page actuelle
 var currentPage = window.location.pathname;
 // Mise en surbrillance du lien correspondant à la page actuelle
-if (currentPage === "/Flask/App/templates/elector.html") {
+if (currentPage === "/MyElectorSpace") {
     document.getElementById("personalInfo").classList.add("active");
-} else if (currentPage === "/Flask/App/templates/elections.html") {
+} else if (currentPage === "/elections") {
     document.getElementById("elections").classList.add("active");
 }

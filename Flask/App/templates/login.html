@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./../static/assets/eth.png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/eth.png')}}">
     <link href='https://fonts.googleapis.com/css?family=DM Serif Display' rel='stylesheet'>
     <link rel="stylesheet" href="./../static/css/login.css">
     <title>VotinCorpo - Login</title>
@@ -12,7 +12,7 @@
 <body>
 
     <header>
-        <a href="index.html"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
+        <a href="/VotinCorpo"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
     </header>
 
     <div class="container">
@@ -29,7 +29,7 @@
                 <label for="pk">Private key :</label>
                 <input type="text" id="pk" name="pk">
 
-                <p>Not a user? <a href="register.html">Register now</a></p>
+                <p>Not a user? <a href="/register">Register now</a></p>
         
                 <input type="submit" value="LOGIN">
             </form>

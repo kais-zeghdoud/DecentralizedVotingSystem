@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./../static/assets/eth.png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/eth.png')}}">
     <link href='https://fonts.googleapis.com/css?family=DM Serif Display' rel='stylesheet'>
-    <link rel="stylesheet" href="./../static/css/register.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css')}}">
     <title>VotinCorpo - Register</title>
 </head>
 
@@ -17,7 +17,7 @@
         </div>
 
         <div class="container-item">
-            <a href="index.html"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92"></a>
+            <a href="/VotinCorpo"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92"></a>
             <p style="font-size: 30px">Registration form</p>
             <form action="submit.php" method="POST">
                 <label for="name">Full Name :</label>

@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./../static/assets/eth.png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/eth.png')}}">
     <link rel="stylesheet" href="./../static/css/vote.css">
     <title>VotinCorpo - Personnal info</title>
 </head>
 <body>
 
     <header>
-        <a href="index.html"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
+        <a href="/VotinCorpo"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
         <nav>
-            <a href="elector.html" id="personalInfo">Personnal Info</a>
-            <a href="elections.html"  id="elections">Elections</a>
+            <a href="/MyElectorSpace" id="personalInfo">Personnal Info</a>
+            <a href="/elections"  id="elections">Elections</a>
         </nav>
     </header>
 
@@ -21,35 +21,35 @@
     <div class="container">
         <div class="container-item">
             <p class="title">Full Name:</p>
-            <p>{{full name}}</p>
+            <p>full name</p>
         </div>
 
         <div class="container-item">
             <p class="title">Company:</p>
-            <p>{{company}}</p>
+            <p>company</p>
         </div>
 
         <div class="container-item">
             <p class="title">Position:</p>
-            <p>{{position}}</p>
+            <p>position</p>
         </div>
 
         <div class="container-item">
             <p class="title">Email:</p>
-            <p>{{email}}</p>
+            <p>email</p>
         </div>
 
         <div class="container-item">
             <p class="title">Address:</p>
-            <p>{{address}}</p>
+            <p>address</p>
         </div>
 
         <div class="container-item">
             <p class="title">Number of votes:</p>
-            <p>{{votes_nb}}</p>
+            <p>votes_nb</p>
         </div>
     </div>
     
-    <script src="./../js/vote.js"></script>
+    <script src="{{ url_for('static', filename='js/vote.js')}}"></script>
 </body>
 </html>

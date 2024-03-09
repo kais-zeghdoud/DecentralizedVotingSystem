@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./../static/assets/eth.png">
+    <link rel="icon" href="{{ url_for('static', filename='assets/eth.png')}}">
     <link rel="stylesheet" href="./../static/css/vote.css">
     <title>VotinCorpo - Elections</title>
 </head>
 <body>
 
     <header>
-        <a href="index.html"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
+        <a href="/VotinCorpo"><img src="./../static/assets/logo.png" alt="VotinCorpo logo" width="500" height="92" style="display: block; margin: 0 auto;"></a>
         <nav>
-            <a href="elector.html" id="personalInfo">Personnal Info</a>
-            <a href="elections.html"  id="elections">Elections</a>
+            <a href="/MyElectorSpace" id="personalInfo">Personnal Info</a>
+            <a href="/elections"  id="elections">Elections</a>
         </nav>
     </header>
 
@@ -33,6 +33,6 @@
     </div>
 
     
-    <script src="./../js/vote.js"></script>
+    <script src="{{ url_for('static', filename='js/vote.js')}}"></script>
 </body>
 </html>
