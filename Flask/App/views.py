@@ -14,6 +14,7 @@ data = {'name': "kais",
 app = Flask(__name__)
 app.secret_key = "secret_key"
 
+@app.route('/')
 @app.route('/VotinCorpo')
 def index():
     return render_template('index.html')
@@ -41,14 +42,15 @@ def login():
         accounts = get_accounts()
         if accounts:
             if address in accounts:
-                if "0x"+accounts[address] == pk:
-                    return render_template("elector.html", user = data)
+                if accounts[address] == pk:
+                    return redirect('/MyElectorSpace')
                 else:
                     flash("Invalid private key!")
             else:
                 flash("Invalid Address...")
         else:
             flash("Blockchain unreachable, make sure that ganache is launched")
+
     return render_template('login.html')
 
 
