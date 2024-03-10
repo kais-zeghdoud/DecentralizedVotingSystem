@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
     <title>VotinCorpo</title>
 </head>
+
 <body>
     <div class="topnav">
         <a class="active" href="#home">Home</a>
+        <a href="#features">Features</a>
         <a href="#about">About</a>
-        <a href="#context">Context</a>
+        <a href="#steps">Steps</a>
         <a href="/login">Login</a>
         
     </div>
-    <div class="container">
+
+    <div id="home" class="container">
         <div class="container-item">
             <img src="./../static/assets/index.png" alt="Let's vote" width="392" height="666">
         </div>
@@ -28,22 +31,78 @@
             </form>
             <a href="/register"><input type="submit" value="REGISTER"></a>
         </div>
+    </div>
 
+    <div id="features" class="container_white">
+        <h1>Features</h1>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="./../static/assets/lock.png" alt="register image" width="60" height="60">
+                <p>Secured by 256 bit encryption</p>
+            </div>
+            <div class="image-item">
+                <img src="./../static/assets/eth.png" alt="register image" width="60" height="60">
+                <p>Backed by etherum based technology</p>
+            </div>
+            <div class="image-item">
+                <img src="./../static/assets/verifiable.png" alt="register image" width="60" height="60">
+                <p>Verifiable transactions</p>
+            </div>
+            <div class="image-item">
+                <img src="./../static/assets/hand.png" alt="register image" width="60" height="60">
+                <p>Easy to use</p>
+            </div>
+            <div class="image-item">
+                <img src="./../static/assets/price.png" alt="register image" width="60" height="60">
+                <p>Cheaper than ballot voting system</p>
+            </div>()
+            <div class="image-item">
+                <img src="./../static/assets/time.png" alt="register image" width="60" height="60">
+                <p>Faster voting process</p>
+            </div>
+        </div>
+        
     </div>
-    <!--
-    <div class="about">
-        <h1 id="about">About</h1>
-        <p>VotinCorpo is a decentralized voting system that allows you to vote for your favorite candidate in a secure and transparent way. It is built on the Ethereum blockchain and uses smart contracts to ensure the integrity of the voting process. With VotinCorpo, you can be sure that your vote will be counted and that the results will be accurate and tamper-proof.</p>
+    
+    <div id="about" class="container">
+        <div class="container-item">
+            <h1>About</h1>
+            <p style="font-size: 30px">VotinCorpo was created to address the challenges of traditional voting systems, such as fraud, manipulation, and lack of transparency. By using blockchain technology, VotinCorpo provides a secure and transparent way to vote, ensuring that the results are accurate and tamper-proof. With VotinCorpo, you can be confident that your vote will be counted and that the results will reflect the will of the people.</p>
+            <p style="font-size: 30px">VotinCorpo is a decentralized voting system that allows you to vote for your favorite candidate in a secure and transparent way. It is built on the Ethereum blockchain and uses smart contracts to ensure the integrity of the voting process. With VotinCorpo, you can be sure that your vote will be counted and that the results will be accurate and tamper-proof.</p>
+
+        </div>
     </div>
-    <div class="context">
-        <h1 id="context">Context</h1>
-        <p>VotinCorpo was created to address the challenges of traditional voting systems, such as fraud, manipulation, and lack of transparency. By using blockchain technology, VotinCorpo provides a secure and transparent way to vote, ensuring that the results are accurate and tamper-proof. With VotinCorpo, you can be confident that your vote will be counted and that the results will reflect the will of the people.</p>
+
+    <div id="steps" class="container_white">
+        <h1>Easy steps</h1>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="./../static/assets/registration.png" alt="register image" width="60" height="60">
+                <p>Secured by 256 bit encryption</p>
+            </div>
+            <div class="image-item">
+                <img src="./../static/assets/signin.png" alt="register image" width="60" height="60">
+                <p>Backed by etherum based technology</p>
+            </div>
+            <div class="image-item">
+                <img src="./../static/assets/dashboard.png" alt="register image" width="60" height="60">
+                <p>Verifiable transactions</p>
+            </div>
+            <div class="image-item">
+                <img src="./../static/assets/key.png" alt="register image" width="60" height="60">
+                <p>Easy to use</p>
+            </div>
+            <div class="image-item">
+                <img src="./../static/assets/submit.png" alt="register image" width="60" height="60">
+                <p>Cheaper than ballot voting system</p>
+            </div>
+        </div>
+        
     </div>
 
 
     <div class="footer">
-        <p>© 2021 VotinCorpo</p>
+        <p style="font-size: 30px">© 2021 VotinCorpo</p>
     </div>
-    -->
 </body>
 </html>
