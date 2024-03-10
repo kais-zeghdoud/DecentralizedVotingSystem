@@ -32,7 +32,57 @@
 
     </div>
 
-    
+<button id="voteBtn" onclick="openPopup()">Vote Now</button>
+
+<div id="votingPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <form id="votingForm">
+            <div class="voting-panel">
+                <h2>Voting Panel</h2>
+                <div class="candidate" onclick="toggleInfo('candidate1Info')">
+                    <input type="radio" id="candidate1" name="candidate" value="Baburao">
+                    <label for="candidate1">Baburao Ganpatrao Apte - Independent</label>
+                    <div id="candidate1Info" class="candidate-info">
+                        <p>Age: 58</p>
+                        <p>Education: BA (English Hons.)</p>
+                    </div>
+                </div>
+                <div class="candidate" onclick="toggleInfo('candidate2Info')">
+                    <input type="radio" id="candidate2" name="candidate" value="Baburao">
+                    <label for="candidate2">Baburao Ganpatrao Apte - Independent</label>
+                    <div id="candidate2Info" class="candidate-info">
+                        <p>Age: 58</p>
+                        <p>Education: BA (English Hons.)</p>
+                    </div>
+                </div>
+                <div class="candidate" onclick="toggleInfo('candidate3Info')">
+                    <input type="radio" id="candidate3" name="candidate" value="Baburao">
+                    <label for="candidate3">Baburao Ganpatrao Apte - Independent</label>
+                    <div id="candidate3Info" class="candidate-info">
+                        <p>Age: 58</p>
+                        <p>Education: BA (English Hons.)</p>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
     <script src="{{ url_for('static', filename='js/vote.js')}}"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

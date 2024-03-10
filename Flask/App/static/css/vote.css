@@ -4,7 +4,7 @@
 
 body{
     background-color: #001124;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'DM Serif Display';
 }
 
@@ -111,3 +111,86 @@ nav a.active {
 .title{
     color: #015FC7;
 }
+
+
+
+
+
+
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.candidate {
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.candidate-info {
+    display: none;
+    padding-left: 20px;
+}
+
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+input[type="radio"] + label {
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #b3d4fc;
+}
+
+input[type="submit"] {
+    background-color: #4b5ecc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+

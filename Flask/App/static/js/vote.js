@@ -1,9 +1,9 @@
-function openPopup() {
-    document.getElementById("votePopup").style.display = "block";
-}
-function closePopup() {
-    document.getElementById("votePopup").style.display = "none";
-}
+// function openPopup() {
+//     document.getElementById("votePopup").style.display = "block";
+// }
+// function closePopup() {
+//     document.getElementById("votePopup").style.display = "none";
+// }
 let isTextVisible = true;
 let initialText = toggleVisibility();
 function toggleVisibility() {
@@ -36,3 +36,54 @@ if (currentPage === "/MyElectorSpace") {
 } else if (currentPage === "/elections") {
     document.getElementById("elections").classList.add("active");
 }
+
+
+
+
+
+
+
+
+function toggleInfo(id) {
+    var info = document.getElementById(id);
+    if (info) {
+        if (info.style.display === "block") {
+            info.style.display = "none";
+        } else {
+            info.style.display = "block";
+        }
+    }
+}
+
+// Ouvrir le popup
+function openPopup() {
+    var popup = document.getElementById("votingPopup");
+    if (popup) {
+        popup.style.display = "block";
+    }
+}
+
+// Fermer le popup
+function closePopup() {
+    var popup = document.getElementById("votingPopup");
+    if (popup) {
+        popup.style.display = "none";
+    }
+}
+function closePopup() {
+    document.getElementById("votingPopup").style.display = "none";
+}
+
+
+function copyToClipboard(text) {
+
+}
+
+
+
+
+
+
+
+
+
