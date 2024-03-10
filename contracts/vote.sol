@@ -7,6 +7,8 @@ contract Vote {
     uint256 public totalVotes;
     bool public votingOpen;
 
+    uint256 public currentRound = 0;
+    mapping(address => uint256) public lastVotedRound;
     struct Candidate {
         uint256 id;
         string name;
@@ -17,8 +19,9 @@ contract Vote {
     mapping(address => bool) public hasVoted;
 
     event Voted(address indexed voter, uint256 candidateId);
-    // Événement pour le décompte des votes
     event VotesCounted(string name, uint256 voteCount);
+    event VotingOpened();
+    event VotingClosed();
 
     modifier onlyOwner() {
         require(msg.sender == owner, "Only owner can call this function");
@@ -32,31 +35,48 @@ contract Vote {
 
     constructor() {
         owner = msg.sender;
-        votingOpen = true;
+        votingOpen = false; // Démarre fermé pour permettre la configuration initiale
     }
 
-    function addCandidate(string memory _name) external onlyOwner onlyDuringVoting {
+    function addCandidate(string memory _name) external onlyOwner {
+        require(votingOpen, "Cannot add candidate when voting is closed");
         candidates.push(Candidate(candidates.length, _name, 0));
     }
 
+    function getCandidates() external view returns (Candidate[] memory) {
+        return candidates;
+    }
+    
     function vote(uint256 _candidateId) external onlyDuringVoting {
         require(_candidateId < candidates.length, "Invalid candidate ID");
-        require(!hasVoted[msg.sender], "You have already voted");
+        require(lastVotedRound[msg.sender] < currentRound, "You have already voted in this round");
         
         candidates[_candidateId].voteCount++;
         totalVotes++;
-        hasVoted[msg.sender] = true;
+        lastVotedRound[msg.sender] = currentRound; // Mise à jour du tour de vote pour cet électeur
 
         emit Voted(msg.sender, _candidateId);
     }
 
     function closeVoting() external onlyOwner onlyDuringVoting {
         votingOpen = false;
-        // Émet un événement avec le décompte des votes pour chaque candidat
         for(uint256 i = 0; i < candidates.length; i++) {
             emit VotesCounted(candidates[i].name, candidates[i].voteCount);
         }
+        emit VotingClosed();
     }
+
+    function openVoting() external onlyOwner {
+        require(!votingOpen, "Voting is already open");
+        delete candidates; // Supprime tous les candidats précédents
+        totalVotes = 0; // Réinitialise le compteur de votes total
+        currentRound++; // Incrémente l'identifiant de tour pour réinitialiser le vote
+
+        votingOpen = true;
+        emit VotingOpened();
+    }
+
+    // Ajoutez d'autres fonctions utiles ici si nécessaire
 }
 
 
