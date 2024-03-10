@@ -1,15 +1,8 @@
-// function openPopup() {
-//     document.getElementById("votePopup").style.display = "block";
-// }
-// function closePopup() {
-//     document.getElementById("votePopup").style.display = "none";
-// }
 let isTextVisible = true;
 let initialText = toggleVisibility();
 function toggleVisibility() {
     const pkElement = document.getElementById('private-key');
     const pkText = pkElement.innerText;
-    console.log(pkText);
     const asterisks = '*'.repeat(pkText.length);
     pkElement.innerText = isTextVisible ? asterisks : pkText;
     isTextVisible = !isTextVisible;
@@ -25,7 +18,7 @@ function copyToClipboard(text) {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
-    alert('Private key copied to clipboard');
+    alert('Key copied to clipboard');
 }
 
 // Récupération du chemin de la page actuelle
@@ -36,12 +29,6 @@ if (currentPage === "/MyElectorSpace") {
 } else if (currentPage === "/elections") {
     document.getElementById("elections").classList.add("active");
 }
-
-
-
-
-
-
 
 
 function toggleInfo(id) {
@@ -73,17 +60,3 @@ function closePopup() {
 function closePopup() {
     document.getElementById("votingPopup").style.display = "none";
 }
-
-
-function copyToClipboard(text) {
-
-}
-
-
-
-
-
-
-
-
-
