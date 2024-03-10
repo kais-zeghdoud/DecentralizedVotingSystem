@@ -20,7 +20,7 @@
     <div class="elections">
 
         <div class="election">
-            <button id="openPopupBtn" onclick="openPopUp()">Election A</button>
+            <button id="voteBtn" onclick="openPopup()">Election A</button>
         </div>
 
         <div id="votePopup" class="popup">
@@ -32,7 +32,6 @@
 
     </div>
 
-<button id="voteBtn" onclick="openPopup()">Vote Now</button>
 
 <div id="votingPopup" class="popup">
     <div class="popup-content">
@@ -41,7 +40,7 @@
             <div class="voting-panel">
                 <h2>Voting Panel</h2>
                 <div class="candidate" onclick="toggleInfo('candidate1Info')">
-                    <input type="radio" id="candidate1" name="candidate" value="Baburao">
+                    <input type="radio" id="candidate1" name="candidate" value="Baburao" required>
                     <label for="candidate1">Baburao Ganpatrao Apte - Independent</label>
                     <div id="candidate1Info" class="candidate-info">
                         <p>Age: 58</p>
@@ -49,7 +48,7 @@
                     </div>
                 </div>
                 <div class="candidate" onclick="toggleInfo('candidate2Info')">
-                    <input type="radio" id="candidate2" name="candidate" value="Baburao">
+                    <input type="radio" id="candidate2" name="candidate" value="Baburao" required>
                     <label for="candidate2">Baburao Ganpatrao Apte - Independent</label>
                     <div id="candidate2Info" class="candidate-info">
                         <p>Age: 58</p>
@@ -57,7 +56,7 @@
                     </div>
                 </div>
                 <div class="candidate" onclick="toggleInfo('candidate3Info')">
-                    <input type="radio" id="candidate3" name="candidate" value="Baburao">
+                    <input type="radio" id="candidate3" name="candidate" value="Baburao" required>
                     <label for="candidate3">Baburao Ganpatrao Apte - Independent</label>
                     <div id="candidate3Info" class="candidate-info">
                         <p>Age: 58</p>
