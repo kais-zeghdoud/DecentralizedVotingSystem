@@ -76,7 +76,6 @@ contract Vote {
         emit VotingOpened();
     }
 
-    // Ajoutez d'autres fonctions utiles ici si nécessaire
 }
 
 
