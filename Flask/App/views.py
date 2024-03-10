@@ -206,8 +206,8 @@ def register():
         elector = (name, company, position, email, address)
         # appel fonction solidity : constructor of Elector
         tx_hash = elector_contract.constructor(
-            address,  # Remplacez par l'adresse du votant
-            contract_address,       # Remplacez par l'adresse du contrat de vote
+            address, 
+            contract_address,
             name,
             company,
             position,
